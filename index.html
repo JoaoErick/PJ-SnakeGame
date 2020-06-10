@@ -5,11 +5,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="shortcut icon" href="./img/Blackvariant-Button-Ui-Requests-13-Snake.ico" />
         <script defer src="./js/script.js"></script>
         <title>Snake Game</title>
     </head>
     <body>
         <h1>SNAKE GAME</h1>
+        <h3 class="count" id="pontos" >Pontuação: [ 0 ]</h3>
         <canvas class="canvas" id="snake" width="512" height="512"></canvas>
+
+        <!-- Por favor selecione arquivo que será lido:
+        <input type="file" id="txtfiletoread" /><br />
+        <div>Conteúdo do arquivo:</div>
+        <div id="filecontents">
+        </div>
+
+        <script>
+
+            window.onload = function () {
+                //Check the support for the File API support
+                if (window.File && window.FileReader && window.FileList && window.Blob) {
+                    var fileSelected = document.getElementById('txtfiletoread');
+                    fileSelected.addEventListener('change', function (e) {
+                        //Set the extension for the file
+                        var fileExtension = /text.*/;
+                        //Get the file object
+                        var fileTobeRead = fileSelected.files[0];
+                        //Check of the extension match
+                        if (fileTobeRead.type.match(fileExtension)) {
+                            //Initialize the FileReader object to read the 2file
+                            var fileReader = new FileReader();
+                            fileReader.onload = function (e) {
+                                var fileContents = document.getElementById('filecontents');
+                                fileContents.innerText = fileReader.result;
+                            }
+                            fileReader.readAsText(fileTobeRead);
+                        }
+                        else {
+                            alert("Por favor selecione arquivo texto");
+                        }
+    
+                    }, false);
+                }
+                else {
+                    alert("Arquivo(s) não suportado(s)");
+                }
+            } 
+
+            function escreverArquivo() {  
+
+                var fso  = new ActiveXObject("Scripting.FileSystemObject");
+                
+                var fh = fso.CreateTextFile("c:Teste.txt", true); 
+                
+                fh.WriteLine("Coloque todo o conteudo que voce deseja nesse trecho...");
+                
+                fh.Close(); 
+                
+            } -->
+    
+        </script>
     </body>
 </html>

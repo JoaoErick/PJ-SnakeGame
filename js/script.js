@@ -21,9 +21,9 @@ function criarBG(){
     context.fillRect(0, 0, 16 * box, 16 * box);
 }
 
-function criarCobrinha(){
+function criarCobrinha(color){
     for(i=0; i<snake.length; i++){
-        context.fillStyle = "green";
+        context.fillStyle = color;
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
@@ -51,12 +51,20 @@ function iniciarJogo(){
     for(i = 1;  i < snake.length; i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo);
-            alert('Game Over :(\nAtualize a página para recomeçar!')
+            alert('GAME OVER :(\n\nAtualize a página para recomeçar!')
         }
     }
 
     criarBG();
-    criarCobrinha();
+    if(counter >= 0 && counter < 10){
+        criarCobrinha("green");
+    } else if(counter >= 10 && counter < 25){
+        criarCobrinha("blue");
+    } else if(counter >= 25 && counter < 50){
+        criarCobrinha("black");
+    }
+
+    
     drawFood();
 
     let snakeX = snake[0].x;
@@ -74,14 +82,16 @@ function iniciarJogo(){
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
         counter++;
+        document.getElementById("pontos").innerHTML = "Pontuação: [ " + counter + " ]";
     }
 
     let newHead = {
         x: snakeX,
         y: snakeY
     }
-
+    
     snake.unshift(newHead);
+
 }
 
-let jogo = setInterval(iniciarJogo, 150);
+let jogo = setInterval(iniciarJogo, 140);

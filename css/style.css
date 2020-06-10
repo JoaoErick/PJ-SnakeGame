@@ -9,7 +9,16 @@ body{
     font-family: arial;
 }
 
+h1{
+    margin-bottom: 2px;;
+}
+
 .canvas{
     border-color: black;
     border-style: solid;
+}
+
+.count{
+    margin-top: 1px;
+    font-family: arial;;
 }
